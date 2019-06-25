@@ -1,0 +1,79 @@
+<style>
+    #container {
+        margin: auto;
+        font-size: 0;
+        width: 500px;
+        height: 100px;
+        background-color: grey;
+    }
+    
+    #social {
+        position: relative;
+        display: inline-block;
+        width: 0%;
+        height: 100%;
+        background-color: blue;
+        transition: all .4s ease-out;
+    }
+    
+    #form {
+        position: relative;
+        display: inline-block;
+        width: 80%;
+        height: 100%;
+        background-color: green;
+        transition: all .4s ease-out;
+    }
+    
+    #discover {
+        position: relative;
+        display: inline-block;
+        width: 20%;
+        height: 100%;
+        background-color: blue;
+        transition: all .4s ease-out;
+    }
+</style>
+
+
+<html>
+
+<body>
+    <div style="text-align:center; padding: 20px;">
+        <a href="index.html" style="font-weight:bold;">First</a>
+        <a href="index2.html">Second</a>
+        <a href="index3.html">Third</a>
+        <a href="index4.html">Fourth</a>
+    </div>
+
+    <section id="container">
+
+        <div id="social" onclick="socialClick()">Soc</div>
+
+        <div id="form">Form</div>
+
+        <div id="discover"=o onclick="discoverClick()">Desc</div>
+
+    </section>
+
+</body>
+
+</html>
+
+<script>
+    function discoverClick() {
+        discover = document.getElementById("discover");
+        social = document.getElementById("social");
+
+        discover.style.width = "0%";
+        social.style.width = "20%";
+    }
+
+    function socialClick() {
+        discover = document.getElementById("discover");
+        social = document.getElementById("social");
+
+        discover.style.width = "20%";
+        social.style.width = "0%";
+    }
+</script>

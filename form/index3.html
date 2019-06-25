@@ -1,0 +1,145 @@
+<style>
+    #container {
+        margin: auto;
+        font-size: 0;
+        width: 500px;
+        height: 100px;
+    }
+    
+    #social {
+        position: relative;
+        display: inline-block;
+        width: 0%;
+        height: 100%;
+        background-color: blue;
+        transition: all .4s ease-out;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    #form {
+        position: relative;
+        display: inline-block;
+        width: 80%;
+        height: 100%;
+        background-color: yellow;
+        transition: all .4s ease-out;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    #title {
+        width: 100%;
+        height: 0%;
+        background-color: orangered;
+        transition: all .3s ease-out;
+    }
+    
+    #discover {
+        position: relative;
+        display: inline-block;
+        width: 20%;
+        height: 100%;
+        background-color: blue;
+        transition: all .4s ease-out;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+</style>
+
+
+<html>
+
+<body>
+
+    <div style="text-align:center; padding: 20px;">
+        <a href="index.html">First</a>
+        <a href="index2.html">Second</a>
+        <a href="index3.html" style="font-weight:bold;">Third</a>
+        <a href="index4.html">Fourth</a>
+    </div>
+
+    <section class="panel" id="container">
+
+        <div id="social" onclick="initSocial()">Soc</div>
+
+        <div id="form">Form
+            <div id="title">Title</div>
+        </div>
+
+        <div id="discover" onclick="initDiscover()">Desc</div>
+
+    </section>
+
+
+</body>
+
+</html>
+
+<script>
+    function initDiscover() {
+        discoverOn();
+        formBorderRight();
+        setTimeout(titleOn, 350);
+    }
+
+    function initSocial() {
+        socialOn();
+        formBorderLeft();
+        setTimeout(titleOff, 350);
+    }
+
+
+
+    function discoverOn() {
+        discover = document.getElementById("discover");
+        social = document.getElementById("social");
+        discover.style.width = "0%";
+        social.style.width = "20%";
+    }
+
+    function socialOn() {
+        discover = document.getElementById("discover");
+        social = document.getElementById("social");
+        discover.style.width = "20%";
+        social.style.width = "0%";
+    }
+
+    function titleOn() {
+        title = document.getElementById("title");
+        title.style.height = "30%";
+    }
+
+    function titleOff() {
+        title = document.getElementById("title");
+        title.style.height = "0%";
+    }
+
+    function formBorderLeft() {
+        title = document.getElementById("form");
+        title = document.getElementById("title");
+        form.style.borderBottomLeftRadius = "10px";
+        form.style.borderTopLeftRadius = "10px";
+        form.style.borderBottomRightRadius = "0px";
+        form.style.borderTopRightRadius = "0px";
+
+        title.style.borderTopLeftRadius = "10px";
+        title.style.borderTopRightRadius = "0px";
+    }
+
+    function formBorderRight() {
+        title = document.getElementById("form");
+        title = document.getElementById("title");
+        form.style.borderBottomRightRadius = "10px";
+        form.style.borderTopRightRadius = "10px";
+
+        form.style.borderBottomLeftRadius = "0px";
+        form.style.borderTopLeftRadius = "0px";
+
+        title.style.borderTopRightRadius = "10px";
+        title.style.borderTopLeftRadius = "0px";
+    }
+</script>

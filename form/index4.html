@@ -1,0 +1,283 @@
+<style>
+    .panel {
+        margin: auto;
+        font-size: 0;
+        width: 500px;
+        height: 100px;
+    }
+    
+    .panel {
+        padding: 5px;
+    }
+    
+    #social {
+        position: relative;
+        display: inline-block;
+        width: 0%;
+        height: 100%;
+        background-color: rgb(75, 75, 224);
+        transition: all .3s ease-out;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        opacity: 0;
+    }
+    
+    #form {
+        position: relative;
+        display: inline-block;
+        width: 90%;
+        height: 100%;
+        background-color: rgb(243, 243, 85);
+        transition: all .3s ease-out;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    #title {
+        width: 100%;
+        height: 0%;
+        background-color: rgb(245, 113, 65);
+        transition: all .2s ease-out;
+        opacity: 0;
+    }
+    
+    #discover {
+        position: relative;
+        display: inline-block;
+        width: 10%;
+        height: 100%;
+        background-color: rgb(75, 75, 224);
+        transition: all .3s ease-out;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        opacity: 1;
+    }
+    
+    #cat {
+        width: 500px;
+        height: 0px;
+        margin: auto;
+        font-size: 0;
+        margin-top: 5px;
+        border-radius: 5px;
+        opacity: 0;
+        transition: all .2s ease-out;
+        background-color: rgb(181, 143, 216);
+    }
+    
+    .art {
+        padding-top: 10px;
+    }
+    
+    #artTitle {
+        width: 500px;
+        height: 50px;
+        background-color: gray;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    #artContent {
+        width: 500px;
+        height: 300px;
+        background-color: rgb(207, 206, 206);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    
+    #socialFeed,
+    #recipeFeed {
+        margin: auto;
+        font-size: 0;
+        display: block;
+        transition: opacity .2s ease-in;
+    }
+    
+    #recipeFeed {
+        display: none;
+    }
+    
+    #t1 {
+        position: relative;
+        width: 40%;
+        height: 20%;
+        border-bottom: 10px solid rgb(165, 165, 228);
+        border-right: 10px solid rgb(118, 118, 226);
+        z-index: 1;
+        transform: translate(15px, 35px) rotate(135deg);
+        border-radius: 7px;
+    }
+</style>
+
+
+<html>
+
+<body>
+
+    <div style="text-align:center; padding: 20px;">
+        <a href="index.html">First</a>
+        <a href="index2.html">Second</a>
+        <a href="index3.html">Third</a>
+        <a href="index4.html" style="font-weight:bold;">Fourth</a>
+    </div>
+
+    <section class="panel" id="container">
+
+        <div id="social" onclick="initSocial()">
+            <div id="t1">Soc</div>
+
+        </div>
+
+        <div id="form">Form
+            <div id="title">Title</div>
+        </div>
+
+        <div id="discover" onclick="initDiscover()">Desc</div>
+
+    </section>
+
+    <section>
+        <div id="cat"></div>
+    </section>
+
+    <section class="panel" id="socialFeed">
+
+        <div class="art"></div>
+        <div id="artTitle"></div>
+        <div id="artContent"></div>
+        </div>
+
+        <div class="art">
+            <div id="artTitle"></div>
+            <div id="artContent"></div>
+        </div>
+
+    </section>
+
+    <section class="panel" id="recipeFeed">
+
+        <div class="art"></div>
+        <div id="artTitle" style="background-color: rgb(90, 90, 179)"></div>
+        <div id="artContent" style="background-color: rgb(148, 148, 180)"></div>
+        </div>
+
+        <div class="art">
+            <div id="artTitle" style="background-color: rgb(90, 90, 179)"></div>
+            <div id="artContent" style="background-color: rgb(148, 148, 180)"></div>
+        </div>
+
+    </section>
+
+
+
+
+
+</body>
+
+</html>
+
+<script>
+    function initDiscover() {
+        discoverOn();
+        formBorderRight();
+        catIn();
+        feedInRecipe();
+        setTimeout(titleOn, 200);
+    }
+
+    function initSocial() {
+        titleOff();
+        formBorderLeft();
+        catOut();
+        feedInSocial();
+        setTimeout(socialOn, 100);
+    }
+
+
+
+    function discoverOn() {
+        discover = document.getElementById("discover");
+        social = document.getElementById("social");
+        discover.style.width = "0%";
+        discover.style.opacity = "0";
+        social.style.width = "10%";
+        social.style.opacity = "1";
+    }
+
+    function socialOn() {
+        discover = document.getElementById("discover");
+        social = document.getElementById("social");
+        discover.style.width = "10%";
+        discover.style.opacity = "1";
+        social.style.width = "0%";
+        social.style.opacity = "0";
+    }
+
+    function titleOn() {
+        title = document.getElementById("title");
+        title.style.height = "30%";
+        title.style.opacity = "1";
+    }
+
+    function titleOff() {
+        title = document.getElementById("title");
+        title.style.height = "0%";
+        title.style.opacity = "0";
+    }
+
+    function formBorderLeft() {
+        title = document.getElementById("form");
+        title = document.getElementById("title");
+        form.style.borderBottomLeftRadius = "10px";
+        form.style.borderTopLeftRadius = "10px";
+        form.style.borderBottomRightRadius = "0px";
+        form.style.borderTopRightRadius = "0px";
+
+        title.style.borderTopLeftRadius = "10px";
+        title.style.borderTopRightRadius = "0px";
+    }
+
+    function formBorderRight() {
+        title = document.getElementById("form");
+        title = document.getElementById("title");
+        form.style.borderBottomRightRadius = "10px";
+        form.style.borderTopRightRadius = "10px";
+
+        form.style.borderBottomLeftRadius = "0px";
+        form.style.borderTopLeftRadius = "0px";
+
+        title.style.borderTopRightRadius = "10px";
+        title.style.borderTopLeftRadius = "0px";
+    }
+
+
+    function feedInSocial() {
+        socialFeed = document.getElementById("socialFeed");
+        recipeFeed = document.getElementById("recipeFeed");
+        socialFeed.style.display = "block";
+        recipeFeed.style.display = "none";
+
+    }
+
+    function feedInRecipe() {
+        socialFeed = document.getElementById("socialFeed");
+        recipeFeed = document.getElementById("recipeFeed");
+        socialFeed.style.display = "none";
+        recipeFeed.style.display = "block";
+    }
+
+    function catIn() {
+        cat = document.getElementById("cat");
+        cat.style.opacity = "1";
+        cat.style.height = "30px";
+    }
+
+    function catOut() {
+        cat = document.getElementById("cat");
+        cat.style.opacity = "0";
+        cat.style.height = "0px";
+    }
+</script>
